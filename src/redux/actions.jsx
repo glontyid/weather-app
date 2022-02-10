@@ -9,7 +9,7 @@ export const getWeather = () => async (dispatch) => {
   });
 
   getLocation.then((res) => {
-    axios(`http://api.weatherapi.com/v1/forecast.json?key=eeb70c97c50a4ebfbbe145845220202&q=${res.coords.latitude},${res.coords.longitude}&days=10&lang=ru`)
+    axios(`https://api.weatherapi.com/v1/forecast.json?key=eeb70c97c50a4ebfbbe145845220202&q=${res.coords.latitude},${res.coords.longitude}&days=10&lang=ru`)
       .then(response => {
         if (response.status === 200) {
           dispatch(setWeather(response.data))
