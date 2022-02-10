@@ -1,0 +1,29 @@
+.CurrentWeather {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.CurrentWeather__temp {
+  font-size: 100px;
+}
+
+.CurrentWeather__icon {
+  margin-left: 30px;
+}
+
+.CurrentWeather__description {
+  margin-left: 30px;
+}
+
+.CurrentWeather__description_precipitation,
+.CurrentWeather__description_humidity,
+.CurrentWeather__description_wind {
+  font-size: 20px;
+}
+
+.CurrentWeather__description_precipitation span,
+.CurrentWeather__description_humidity span,
+.CurrentWeather__description_wind span{
+  opacity: .5;
+}

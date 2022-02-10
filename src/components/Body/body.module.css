@@ -1,0 +1,16 @@
+.Body {
+  padding: 35px 40px;
+  background-color: #fff;
+}
+
+.Body__title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.ForecastDays {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
