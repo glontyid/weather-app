@@ -4,7 +4,7 @@ import classes from "./forecast-day.module.css"
 
 const ForecastDay = ({data}) => {
   const date = new Date(data.date);
-  const isToday = new Date().getDate() === date.getDate() ? true : false;
+  const isToday = new Date().getDate() === date.getDate();
   const months = ['Января','Февраля','Марта','Апреля','Мая','Июня','Июля','Августа','Сентября','Ноября','Декабря']
     
 
@@ -17,7 +17,7 @@ const ForecastDay = ({data}) => {
         {date.getDate()} {months[date.getMonth()].toLowerCase()}
       </div>
       <div className={classes.ForecastDay__dayWeatherIcon}>
-        <img src={data.day.condition.icon}/>
+        <img src={data.day.condition.icon} alt={data.day.condition.text}/>
       </div>
       <div className={classes.ForecastDay__dayTemp}>
         <span className={classes.ForecastDay__maxTemp}>{Math.round(data.day.maxtemp_c)}°</span>

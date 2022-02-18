@@ -1,3 +1,4 @@
 export const GET_WEATHER = {
   SUCCESS: "GET_WEATHER_SUCCESS",
+  CHANGE_CITY: "CHANGE_CITY",
 };

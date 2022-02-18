@@ -1,12 +1,13 @@
 import React from "react";
 import ForecastDay from "./forecast-day/forecast-day";
 import classes from "./body.module.css";
+import {declOfNum} from "../../helpers/helpers";
 
 const ForecastWrapper = ({forecast: {forecastday}}) => {
   return (
     <div className={classes.Body}>
       <div className={classes.Body__title}>
-        Прогноз на 10 дней
+        Прогноз на {forecastday.length} {declOfNum(forecastday.length)}
       </div>
       <div className={classes.ForecastDays}>
       { forecastday.map(item => {

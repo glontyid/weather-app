@@ -3,6 +3,7 @@ import { GET_WEATHER } from "./variables";
 const initialState = {
   success: false,
   data: {},
+  currentCity: null
 };
 
 export const WeatherReducer = (state = initialState, action) => {
@@ -13,11 +14,18 @@ export const WeatherReducer = (state = initialState, action) => {
       return {
         ...state,
         success: true,
-        data: action.payload
+        data: action.payload,
+        currentCity: action.payload.location.name
       };
+    case GET_WEATHER.CHANGE_CITY:
+      return {
+        ...state,
+        data: action.payload
+      }
     default:
       return state;
   }
 };
 
-export const setWeather = (data) => ({type: GET_WEATHER.SUCCESS, payload: data})
+export const initWeather = (data) => ({type: GET_WEATHER.SUCCESS, payload: data})
+export const setWeather = (data) => ({type: GET_WEATHER.CHANGE_CITY, payload: data})

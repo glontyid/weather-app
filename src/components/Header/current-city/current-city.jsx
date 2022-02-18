@@ -3,7 +3,7 @@ import { setCurrentTime, getCurrentWeekDay } from "../../../helpers/helpers";
 import classes from "./current-city.module.css"
 
 const CurrentCity = ({region, city, text}) => {
-  const date = new Date;
+  const date = new Date();
   const currentDate = `${getCurrentWeekDay(date.getDay(), false)}, ${setCurrentTime(date.getHours())}:${setCurrentTime(date.getMinutes())}`;
 
   return (
