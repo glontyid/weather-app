@@ -34,3 +34,10 @@ export function declOfNum(n) {
 
   return titles[n <= 4 ? 0 : 1];
 }
+
+// получение месяца
+export function getMonthName(date) {
+  const months = ['Января','Февраля','Марта','Апреля','Мая','Июня','Июля','Августа','Сентября','Ноября','Декабря'];
+
+  return months[date].toLowerCase();
+}

@@ -7,15 +7,17 @@ const CurrentCity = ({region, city, text}) => {
   const currentDate = `${getCurrentWeekDay(date.getDay(), false)}, ${setCurrentTime(date.getHours())}:${setCurrentTime(date.getMinutes())}`;
 
   return (
-    <div className={classes.cityWrapper}>
-      <div className={classes.currentCity}>
-      {region}, {city}
+    <div className={classes.currentCity}>
+      <div className={classes.currentCity__country}>
+        {region}, {city}
       </div>
-      <div className={classes.currentCity__infoWrapper}>
-        <div className={classes.infoWrapper__date}>
+      <div className={classes.currentCity__details}>
+        <div className={classes.currentCity__details_date}>
           {currentDate}
         </div>
-        <div className={classes.infoWrapper__weather}>{text}</div>
+        <div className={classes.currentCity__details_weather}>
+          {text}
+        </div>
       </div>  
     </div>
   )

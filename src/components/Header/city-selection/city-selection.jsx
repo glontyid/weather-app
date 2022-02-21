@@ -1,20 +1,24 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
+import {getSelectedCityWeather, getWeather} from "../../../redux/actions";
 import classes from "./city-selection.module.css"
-import {getSelectedCityWeather} from "../../../redux/actions";
 
 const CitySelection = (props) => {
-  const initialCity = useSelector(state => state.WeatherReducer.currentCity)
   const dispatch = useDispatch();
 
   function selectCity(event) {
-    dispatch(getSelectedCityWeather(event.target.value))
+    console.log(event.target.value)
+    if (event.target.value === 'currentGeolocation') {
+      dispatch(getWeather())
+    } else {
+      dispatch(getSelectedCityWeather(event.target.value))
+    }
   }
 
   return (
     <select className={classes.citySelection} onChange={selectCity}>
-      <option value={initialCity}>
-        { initialCity }
+      <option value="currentGeolocation">
+        Текущее местоположение
       </option>
       <option value="москва">
         Москва

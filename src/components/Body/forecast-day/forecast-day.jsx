@@ -1,29 +1,37 @@
-import React from "react";
-import { getCurrentWeekDay } from "../../../helpers/helpers";
+import React, {useState} from "react";
+import {getCurrentWeekDay, getMonthName} from "../../../helpers/helpers";
 import classes from "./forecast-day.module.css"
+import preloader from "../../../assets/preloader/Rolling-1s-200px.svg"
 
 const ForecastDay = ({data}) => {
   const date = new Date(data.date);
   const isToday = new Date().getDate() === date.getDate();
-  const months = ['Января','Февраля','Марта','Апреля','Мая','Июня','Июля','Августа','Сентября','Ноября','Декабря']
-    
+  const [load, setLoad] = useState(false);
 
   return (
-    <div className={classes.ForecastDay}>
-      <div className={classes.ForecastDay__dayName}>
+    <div className={classes.forecastDay}>
+      <div className={classes.forecastDay__dayName}>
         { isToday ? 'Сегодня' : getCurrentWeekDay(date.getDay(), true) }
       </div>
-      <div className={classes.ForecastDay__dayDate}>
-        {date.getDate()} {months[date.getMonth()].toLowerCase()}
+      <div className={classes.forecastDay__dayDate}>
+        {date.getDate()} {getMonthName(date.getMonth())}
       </div>
-      <div className={classes.ForecastDay__dayWeatherIcon}>
-        <img src={data.day.condition.icon} alt={data.day.condition.text}/>
+      <div className={classes.forecastDay__dayWeatherIcon}>
+        <img
+          src={ load ? data.day.condition.icon : preloader }
+          alt={data.day.condition.text}
+          onLoad={() => setLoad(true)}
+        />
       </div>
-      <div className={classes.ForecastDay__dayTemp}>
-        <span className={classes.ForecastDay__maxTemp}>{Math.round(data.day.maxtemp_c)}°</span>
-        <span className={classes.ForecastDay__minTemp}>{Math.round(data.day.mintemp_c)}°</span>
+      <div className={classes.forecastDay__dayTemp}>
+        <span className={classes.forecastDay__maxTemp}>
+          {Math.round(data.day.maxtemp_c) > 0 ? '+' + Math.round(data.day.maxtemp_c) : Math.round(data.day.maxtemp_c)}°
+        </span>
+        <span className={classes.forecastDay__minTemp}>
+          {Math.round(data.day.mintemp_c) > 0 ? '+' + Math.round(data.day.mintemp_c) : Math.round(data.day.mintemp_c)}°
+        </span>
       </div>
-      <div className={classes.ForecastDay__dayWeather}>
+      <div className={classes.forecastDay__dayWeather}>
         {data.day.condition.text}
       </div>
     </div>

@@ -1,40 +1,46 @@
-.ForecastDay {
-  margin-right: 30px;
-  width: 105px;
+.forecastDay {
+  width: 100%;
 }
 
-.ForecastDay__dayName {
-  font-size: 25px;
+.forecastDay:not(:last-of-type) {
+  margin-right: 30px;
 }
-.ForecastDay__dayDate {
+
+.forecastDay__dayName {
   font-size: 20px;
+}
+.forecastDay__dayDate {
+  font-size: 16px;
   opacity: .5;
 }
-.ForecastDay__dayWeatherIcon {
+.forecastDay__dayWeatherIcon {
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  align-items: center;
+  margin: 10px auto;
+  width: 64px;
+  height: 64px;
 }
-.ForecastDay__dayWeatherIcon img {
+.forecastDay__dayWeatherIcon img {
   display: block;
   width: auto;
   height: auto;
   margin: auto;
 }
-.ForecastDay__dayTemp {
-  font-size: 25px;
+.forecastDay__dayTemp {
+  font-size: 24px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-.ForecastDay__dayWeather {
-  font-size: 16px;
+.forecastDay__dayWeather {
+  font-size: 14px;
   opacity: .4;
 }
-.ForecastDay__maxTemp {
+.forecastDay__maxTemp {
   font-weight: 700;
 }
-.ForecastDay__minTemp {
+.forecastDay__minTemp {
   opacity: .5;
 }

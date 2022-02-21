@@ -3,7 +3,7 @@ import Body from "./components/Body/forecast-wrapper";
 import React, {useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {getWeather} from "./redux/actions"
-import Preloader from "./components/Others/Preloader";
+import Preloader from "./components/Common/preloader/preloader";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       { !!weatherData.success ?
-        <div>
+        <div className="App-wrapper">
           <Header currentWeather={currentWeather}/>
           <Body forecast={forecast}/>
         </div>

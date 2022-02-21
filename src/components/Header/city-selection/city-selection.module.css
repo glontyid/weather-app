@@ -1,12 +1,5 @@
 .citySelection {
-    position: relative;
-    z-index: 10;
-    border: 0;
-    background-color: transparent;
     outline: none;
-    font-size: 16px;
-}
-
-.citySelection option {
-    font-size: 14px;
+    border: none;
+    background-color: transparent;
 }

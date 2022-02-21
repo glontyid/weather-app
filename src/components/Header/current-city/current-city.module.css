@@ -1,14 +1,14 @@
-.currentCity {
-  font-size: 50px;
+.currentCity__country {
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-
-.infoWrapper__date, .infoWrapper__weather {
-  font-size: 22px;
+.currentCity__details {}
+.currentCity__details_date, .currentCity__details_weather {
+  font-size: 16px;
   opacity: .5;
 }
 
-.infoWrapper__weather:first-letter {
+.currentCity__details_weather:first-letter {
   text-transform: uppercase;
 }

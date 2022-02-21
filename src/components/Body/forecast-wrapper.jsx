@@ -1,6 +1,6 @@
 import React from "react";
 import ForecastDay from "./forecast-day/forecast-day";
-import classes from "./body.module.css";
+import classes from "./forecast-wrapper.module.css";
 import {declOfNum} from "../../helpers/helpers";
 
 const ForecastWrapper = ({forecast: {forecastday}}) => {
