@@ -1,5 +1,5 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {getSelectedCityWeather, getWeather} from "../../../redux/actions";
 import classes from "./city-selection.module.css"
 
@@ -7,7 +7,6 @@ const CitySelection = (props) => {
   const dispatch = useDispatch();
 
   function selectCity(event) {
-    console.log(event.target.value)
     if (event.target.value === 'currentGeolocation') {
       dispatch(getWeather())
     } else {

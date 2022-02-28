@@ -30,7 +30,6 @@ export const getWeather = () => async (dispatch) => {
 export const getSelectedCityWeather = (city) => async (dispatch) => {
   axios(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&lang=ru`)
     .then(response => {
-      console.log(response)
       if (response.status === 200) {
         dispatch(setWeather(response.data))
       }

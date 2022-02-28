@@ -6,8 +6,9 @@ import { backgroundChanger } from "../../helpers/helpers"
 import CitySearch from "./city-search";
 import classes from "./header.module.css"
 
+
+
 const Header = ({currentWeather: {current, location}}) => {
-  console.log(current, location)
   const {name, region} = location;
   const {temp_c, humidity, cloud, wind_kph, condition: {text, icon}} = current;
 
